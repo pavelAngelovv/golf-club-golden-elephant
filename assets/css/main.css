@@ -1,0 +1,175 @@
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #1a3c2e;
+    /* adjust to match Figma */
+    --color-accent: #c9a84c;
+    /* gold tone typical for golf */
+    --color-text: #333;
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Arial', sans-serif;
+}
+
+/* Container */
+.container {
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header */
+.site-header {
+    background: transparent;
+    padding: 1rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+/* Left icons */
+.site-header-left {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.phone-icon,
+.lang-switcher {
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Logo with circle */
+.site-logo {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-logo-link,
+.site-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    margin-top: 15px;
+}
+
+.custom-logo {
+    width: 55px;
+    height: auto;
+}
+
+/* Right side — reserve + nav */
+.site-header-right {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.reserve-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* Nav items with borders */
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.site-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.site-nav ul li a:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero */
+.hero {
+    background: var(--color-primary);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn--primary {
+    background: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.btn--secondary {
+    background: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
