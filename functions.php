@@ -9,6 +9,12 @@ add_action('after_setup_theme', 'golf_club_setup');
 function golf_club_enqueue_scripts()
 {
     wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Poiret+One&display=swap',
+        [],
+        null
+    );
+    wp_enqueue_style(
         'golf-club-main',
         get_template_directory_uri() . '/assets/css/main.css',
         [],
@@ -31,6 +37,30 @@ function golf_club_menus()
     ]);
 }
 add_action('after_setup_theme', 'golf_club_menus');
+
+function golf_club_nav_icons($items, $args)
+{
+    if ($args->theme_location !== 'primary') {
+        return $items;
+    }
+
+    $icons = [
+        'Вечеря' => 'ph-chef-hat',
+        'Нощувка' => 'ph-bed',
+        'Голф' => 'ph-flag-pennant',
+    ];
+
+    foreach ($icons as $label => $icon) {
+        $items = str_replace(
+            '>' . $label . '<',
+            '><i class="ph ' . $icon . '"></i> ' . $label . '<',
+            $items
+        );
+    }
+
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'golf_club_nav_icons', 10, 2);
 
 function golf_club_register_cpt_tournament()
 {
