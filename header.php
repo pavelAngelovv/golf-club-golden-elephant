@@ -27,7 +27,7 @@
             </div>
 
             <div class="site-header-right">
-                <a href="#" class="reserve-link">Резервирай ↓</a>
+                <a href="#" class="reserve-link">Резервирай <i class="ph ph-arrow-down-right"></i></a>
                 <nav class="site-nav">
                     <?php wp_nav_menu(['theme_location' => 'primary', 'container' => false]); ?>
                 </nav>
