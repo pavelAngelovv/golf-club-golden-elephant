@@ -98,7 +98,7 @@ function golf_club_acf_fields()
                 'name' => 'tournament_date',
                 'type' => 'date_picker',
                 'display_format' => 'd/m/Y',
-                'return_format' => 'd/m/Y',
+                'return_format' => 'Ymd',
             ],
         ],
         'location' => [

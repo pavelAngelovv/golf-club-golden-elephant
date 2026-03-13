@@ -50,20 +50,6 @@
     color: white;
 }
 
-.nav-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.phone-icon,
-.lang-switcher {
-    color: white;
-    font-size: 0.9rem;
-}
-
 .site-logo {
     grid-column: 2;
     display: flex;
@@ -190,11 +176,6 @@
     opacity: 0.85;
 }
 
-
-.tournaments {
-    padding: 4rem 0;
-}
-
 .section-title {
     font-family: var(--font-heading);
     font-size: 2rem;
@@ -202,53 +183,65 @@
     color: var(--color-primary);
 }
 
-.tournaments-grid {
+.tournaments {
+    padding: 4rem 0;
+}
+
+.tournaments-title {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+}
+
+.tournaments-divider {
+    border: none;
+    border-top: 1px solid var(--color-accent);
+    margin-bottom: 3rem;
+    width: 300px;
+    margin-left: 4rem;
+}
+
+.tournaments-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem 4rem;
+    margin-left: 4rem;
 }
 
-.tournament-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
+.tournaments-label h3 {
+    font-size: 1.8rem;
+    color: #888;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
-.tournament-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.tournament-row {
+    margin-bottom: 1rem;
 }
 
-.tournament-card-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.tournament-card-content {
-    padding: 1.5rem;
-}
-
-.tournament-card-title a {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.tournament-card-meta {
-    list-style: none;
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.tournament-row-date {
     color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.tournament-row-title {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.tournament-row hr {
+    border: none;
+    border-top: 1px solid #ccc;
 }
 
 .about-content {
     position: relative;
     min-width: 0;
     align-self: center;
-    padding-top:1rem;
+    padding-top: 1rem;
 }
 
 .about-watermark {
@@ -260,7 +253,7 @@
     z-index: 0;
 }
 
-.about-content > * {
+.about-content>* {
     position: relative;
     z-index: 1;
 }
@@ -288,7 +281,7 @@
 
 .about-divider {
     border: none;
-    border-top: 1px solid #999;
+    border-top: 1px solid var(--color-accent);
     margin-bottom: 1.5rem;
     width: 60%;
 }
