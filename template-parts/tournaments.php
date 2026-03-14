@@ -21,10 +21,11 @@
             while ($all_tournaments->have_posts()):
                 $all_tournaments->the_post();
                 $date = get_field('tournament_date');
+                $image = get_field('tournament_image');
                 if ($date >= $today):
                     $upcoming[] = ['title' => get_the_title(), 'date' => $date];
                 else:
-                    $past[] = ['title' => get_the_title(), 'date' => $date];
+                    $past[] = ['title' => get_the_title(), 'date' => $date, 'image' => $image];
                 endif;
             endwhile;
             wp_reset_postdata();
@@ -58,17 +59,32 @@
             <div class="tournaments-list">
                 <?php if (!empty($past)): ?>
                     <?php foreach (array_reverse($past) as $t): ?>
-                        <div class="tournament-row">
-                            <p class="tournament-row-date">
-                                <?php echo esc_html(date('d.m.Y', strtotime($t['date']))); ?>
-                            </p>
-                            <p class="tournament-row-title"><?php echo esc_html($t['title']); ?></p>
+                        <div class="tournament-row tournament-row-past">
+                            <?php if (!empty($t['image'])): ?>
+                                <div class="tournament-row-image">
+                                    <img src="<?php echo esc_url($t['image']); ?>" alt="<?php echo esc_attr($t['title']); ?>">
+                                </div>
+                            <?php endif; ?>
+
+                            <div class="tournament-row-info">
+                                <p class="tournament-row-date">
+                                    <?php echo esc_html(date('d.m.Y', strtotime($t['date']))); ?>
+                                </p>
+                                <p class="tournament-row-title"><?php echo esc_html($t['title']); ?></p>
+                            </div>
+
                             <hr>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <p>Няма минали турнири.</p>
                 <?php endif; ?>
+                <div class="all-tournaments-button">
+                    <a href="#" class="all-tournaments-button-text">
+                        Всички турнири <i class="ph ph-arrow-right"></i>
+                        <hr class="all-tournaments-button-divider">
+                    </a>
+                </div>
             </div>
 
         </div>

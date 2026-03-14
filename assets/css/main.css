@@ -151,31 +151,6 @@
     opacity: 0.85;
 }
 
-.btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-
-.btn--primary {
-    background: var(--color-accent);
-    color: var(--color-primary);
-}
-
-.btn--secondary {
-    background: transparent;
-    border: 2px solid var(--color-accent);
-    color: var(--color-accent);
-}
-
-.btn:hover {
-    opacity: 0.85;
-}
-
 .section-title {
     font-family: var(--font-heading);
     font-size: 2rem;
@@ -222,19 +197,70 @@
 
 .tournament-row-date {
     color: #555;
-    font-size: 0.95rem;
     margin-bottom: 0.3rem;
+    font-size: 1rem;
 }
 
 .tournament-row-title {
     color: #333;
-    font-size: 1rem;
     margin-bottom: 0.8rem;
+    font-size: 1.2rem;
 }
 
 .tournament-row hr {
     border: none;
     border-top: 1px solid #ccc;
+}
+
+.tournament-row-past {
+    position: relative;
+    cursor: pointer;
+}
+
+.tournament-row-image {
+    position: absolute;
+    left: -300px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    height: 300px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+    object-fit: cover;
+}
+
+.tournament-row-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tournament-row-past:hover .tournament-row-image {
+    opacity: 1;
+}
+
+.all-tournaments-button {
+    margin-top: 2rem;
+    text-align: end;
+    font-size: 1.3rem;
+}
+
+.all-tournaments-button-text {
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.all-tournaments-button-divider {
+    border: none;
+    border-top: 1px solid var(--color-accent);
+    margin-bottom: 3rem;
+    width: 225px;
+    margin-left: auto;
+    margin-top: 0.5rem;
 }
 
 .about-content {

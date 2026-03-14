@@ -100,6 +100,13 @@ function golf_club_acf_fields()
                 'display_format' => 'd/m/Y',
                 'return_format' => 'Ymd',
             ],
+            [
+                'key' => 'field_tournament_image',
+                'label' => 'Tournament Image',
+                'name' => 'tournament_image',
+                'type' => 'image',
+                'return_format' => 'url',
+            ],
         ],
         'location' => [
             [['param' => 'post_type', 'operator' => '==', 'value' => 'tournament']],
