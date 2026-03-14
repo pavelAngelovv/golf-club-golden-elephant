@@ -18,8 +18,8 @@
     --color-text: #333;
 }
 
-.body {
-    background-color: #f5f3ef;
+.wp-theme-golf-club-golden-elephant-theme {
+    background-color: #f7f7f7;
 }
 
 .container {
@@ -156,10 +156,6 @@
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--color-primary);
-}
-
-.tournaments {
-    padding: 4rem 0;
 }
 
 .tournaments-title {
@@ -321,9 +317,146 @@
 }
 
 .site-footer {
-    background: var(--color-primary);
-    color: white;
-    padding: 2rem 0;
+    background: #f7f7f7;
+}
+
+.footer-top .container {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 2rem 1.5rem;
+}
+
+.footer-top-line {
+    flex: 1;
+    border: none;
+    border-top: 1px solid var(--color-accent);
+}
+
+.footer-top .site-logo {
+    flex-shrink: 0;
+}
+
+.footer-top .custom-logo-link {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.footer-main .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    padding: 1rem 1.5rem;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-left: 7rem
+}
+
+.footer-nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.footer-nav a:hover {
+    color: var(--color-primary);
+}
+
+.footer-center {
     text-align: center;
-    margin-top: 4rem;
+}
+
+.footer-club-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-shadow: 0.5px 0 0 #333, -0.5px 0 0 #333;
+}
+
+.footer-center p {
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.footer-contacts-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 1.5rem 0 0.5rem;
+    text-shadow: 0.5px 0 0 #333, -0.5px 0 0 #333;
+}
+
+.footer-partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-partners img {
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0rem 0rem 0rem;
+    text-shadow: 0.5px 0 0 #333, -0.5px 0 0 #333;
+}
+
+.footer-icons a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-icons a:hover {
+    color: var(--color-primary);
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid var(--color-accent);
+    width: 50%;
+    margin: 0 auto 0 auto;
+}
+
+.footer-bottom {
+    max-width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.footer-bottom a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: var(--color-primary);
 }
