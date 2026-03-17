@@ -9,6 +9,18 @@ add_action('after_setup_theme', 'golf_club_setup');
 function golf_club_enqueue_scripts()
 {
     wp_enqueue_style(
+        'phosphor-icons-regular',
+        'https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css',
+        [],
+        null
+    );
+    wp_enqueue_style(
+        'phosphor-icons-bold',
+        'https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css',
+        [],
+        null
+    );
+    wp_enqueue_style(
         'google-fonts',
         'https://fonts.googleapis.com/css2?family=Poiret+One&display=swap',
         [],

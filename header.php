@@ -4,7 +4,6 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <?php wp_head(); ?>
 </head>
 
@@ -13,12 +12,12 @@
     <header class="site-header">
         <div class="container">
             <div class="site-header-left">
-                <button class="nav-toggle">☰</button>
-                <a class="phone-icon">📞</a>
+                <button class="nav-toggle"><i class="ph-bold ph-list"></i></button>
+                <a class="phone-icon"><i class="ph ph-phone"></i></a>
                 <span class="lang-switcher">EN</span>
             </div>
 
-            <div class="site-logo">
+            <div class="site-logo header-logo">
                 <?php if (has_custom_logo()): ?>
                     <?php the_custom_logo(); ?>
                 <?php else: ?>

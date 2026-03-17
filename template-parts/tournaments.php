@@ -53,7 +53,7 @@
                 <?php endif; ?>
             </div>
 
-            <div class="tournaments-label">
+            <div class="tournaments-label tournaments-label-past">
                 <h3>Минали<br>турнири</h3>
             </div>
             <div class="tournaments-list">
