@@ -10,7 +10,7 @@
             'post_type' => 'tournament',
             'posts_per_page' => -1,
             'orderby' => 'meta_value',
-            'meta_key' => 'tournament_date',
+            'meta_key' => 'tournament_start_date',
             'order' => 'ASC',
         ]);
 
@@ -20,12 +20,23 @@
         if ($all_tournaments->have_posts()):
             while ($all_tournaments->have_posts()):
                 $all_tournaments->the_post();
-                $date = get_field('tournament_date');
+                $start_date = get_field('tournament_start_date');
+                $end_date = get_field('tournament_end_date');
                 $image = get_field('tournament_image');
-                if ($date >= $today):
-                    $upcoming[] = ['title' => get_the_title(), 'date' => $date];
+
+                if ($start_date >= $today):
+                    $upcoming[] = [
+                        'title' => get_the_title(),
+                        'date' => $start_date,
+                        'end_date' => $end_date,
+                    ];
                 else:
-                    $past[] = ['title' => get_the_title(), 'date' => $date, 'image' => $image];
+                    $past[] = [
+                        'title' => get_the_title(),
+                        'date' => $start_date,
+                        'end_date' => $end_date,
+                        'image' => $image,
+                    ];
                 endif;
             endwhile;
             wp_reset_postdata();
@@ -42,7 +53,11 @@
                     <?php foreach ($upcoming as $t): ?>
                         <div class="tournament-row">
                             <p class="tournament-row-date">
-                                <?php echo esc_html(date('d.m.Y', strtotime($t['date']))); ?>
+                                <?php
+                                $start = date('d.m.Y', strtotime($t['date']));
+                                $end = !empty($t['end_date']) ? ' - ' . date('d.m.Y', strtotime($t['end_date'])) : '';
+                                echo esc_html($start . $end);
+                                ?>
                             </p>
                             <p class="tournament-row-title"><?php echo esc_html($t['title']); ?></p>
                             <hr>
@@ -68,7 +83,11 @@
 
                             <div class="tournament-row-info">
                                 <p class="tournament-row-date">
-                                    <?php echo esc_html(date('d.m.Y', strtotime($t['date']))); ?>
+                                    <?php
+                                    $start = date('d.m.Y', strtotime($t['date']));
+                                    $end = !empty($t['end_date']) ? ' - ' . date('d.m.Y', strtotime($t['end_date'])) : '';
+                                    echo esc_html($start . $end);
+                                    ?>
                                 </p>
                                 <p class="tournament-row-title"><?php echo esc_html($t['title']); ?></p>
                             </div>

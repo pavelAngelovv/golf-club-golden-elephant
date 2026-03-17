@@ -105,12 +105,21 @@ function golf_club_acf_fields()
         'title' => 'Tournament Details',
         'fields' => [
             [
-                'key' => 'field_tournament_date',
-                'label' => 'Tournament Date',
-                'name' => 'tournament_date',
+                'key' => 'field_tournament_start_date',
+                'label' => 'Tournament Start Date',
+                'name' => 'tournament_start_date',
                 'type' => 'date_picker',
                 'display_format' => 'd/m/Y',
                 'return_format' => 'Ymd',
+            ],
+            [
+                'key' => 'field_tournament_end_date',
+                'label' => 'Tournament End Date',
+                'name' => 'tournament_end_date',
+                'type' => 'date_picker',
+                'display_format' => 'd/m/Y',
+                'return_format' => 'Ymd',
+                'required' => 0,
             ],
             [
                 'key' => 'field_tournament_image',
