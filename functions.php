@@ -101,6 +101,12 @@ function golf_club_acf_fields()
         'title' => 'Homepage Content',
         'fields' => [
             [
+                'key' => 'tab_hero',
+                'label' => 'Hero',
+                'name' => '',
+                'type' => 'tab',
+            ],
+            [
                 'key' => 'field_hero_image',
                 'label' => 'Hero Background Image',
                 'name' => 'hero_image',
@@ -122,6 +128,12 @@ function golf_club_acf_fields()
                 'default_value' => 'Играй с духа на шампионите',
             ],
             [
+                'key' => 'tab_about',
+                'label' => 'About',
+                'name' => '',
+                'type' => 'tab',
+            ],
+            [
                 'key' => 'field_about_title',
                 'label' => 'About Title',
                 'name' => 'about_title',
@@ -141,6 +153,54 @@ function golf_club_acf_fields()
                 'name' => 'about_text_2',
                 'type' => 'textarea',
                 'default_value' => 'Всяко събитие се организира с внимание към детайла и следва утвърдени стандарти на спортменство и престиж, които допринасят за високото ниво и атмосферата на турнира.',
+            ],
+            [
+                'key' => 'tab_footer',
+                'label' => 'Footer',
+                'name' => '',
+                'type' => 'tab',
+            ],
+            [
+                'key' => 'field_footer_club_name',
+                'label' => 'Club Name',
+                'name' => 'footer_club_name',
+                'type' => 'text',
+                'default_value' => 'Голф клуб "Златният слон"',
+            ],
+            [
+                'key' => 'field_footer_address',
+                'label' => 'Address',
+                'name' => 'footer_address',
+                'type' => 'text',
+                'default_value' => 'м-ст Старата чешма, ул. „Игрището" 12',
+            ],
+            [
+                'key' => 'field_footer_city',
+                'label' => 'City',
+                'name' => 'footer_city',
+                'type' => 'text',
+                'default_value' => 'Бяла река 2425, България.',
+            ],
+            [
+                'key' => 'field_footer_phone',
+                'label' => 'Phone',
+                'name' => 'footer_phone',
+                'type' => 'text',
+                'default_value' => '+359 889 999 099',
+            ],
+            [
+                'key' => 'field_footer_email',
+                'label' => 'Email',
+                'name' => 'footer_email',
+                'type' => 'text',
+                'default_value' => 'hello@goldenelephant.com',
+            ],
+            [
+                'key' => 'field_footer_hours',
+                'label' => 'Working Hours',
+                'name' => 'footer_hours',
+                'type' => 'text',
+                'default_value' => '00:00 - 23:00',
             ],
         ],
         'location' => [
