@@ -3,6 +3,10 @@ function golf_club_setup()
 {
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
+
+    register_nav_menus([
+        'primary' => 'Primary Menu',
+    ]);
 }
 add_action('after_setup_theme', 'golf_club_setup');
 
@@ -41,14 +45,6 @@ function golf_club_enqueue_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'golf_club_enqueue_scripts');
-
-function golf_club_menus()
-{
-    register_nav_menus([
-        'primary' => 'Primary Menu',
-    ]);
-}
-add_action('after_setup_theme', 'golf_club_menus');
 
 function golf_club_nav_icons($items, $args)
 {
@@ -100,6 +96,57 @@ function golf_club_acf_fields()
     if (!function_exists('acf_add_local_field_group'))
         return;
 
+    acf_add_local_field_group([
+        'key' => 'group_homepage',
+        'title' => 'Homepage Content',
+        'fields' => [
+            [
+                'key' => 'field_hero_image',
+                'label' => 'Hero Background Image',
+                'name' => 'hero_image',
+                'type' => 'image',
+                'return_format' => 'url',
+            ],
+            [
+                'key' => 'field_hero_title',
+                'label' => 'Hero Title',
+                'name' => 'hero_title',
+                'type' => 'text',
+                'default_value' => 'Турнири',
+            ],
+            [
+                'key' => 'field_hero_subtitle',
+                'label' => 'Hero Subtitle',
+                'name' => 'hero_subtitle',
+                'type' => 'text',
+                'default_value' => 'Играй с духа на шампионите',
+            ],
+            [
+                'key' => 'field_about_title',
+                'label' => 'About Title',
+                'name' => 'about_title',
+                'type' => 'text',
+                'default_value' => 'Духът на голфа',
+            ],
+            [
+                'key' => 'field_about_text_1',
+                'label' => 'About Text (first paragraph)',
+                'name' => 'about_text_1',
+                'type' => 'textarea',
+                'default_value' => 'Голф турнирите са сред най-очакваните събития в календара на всеки клуб. Те събират любители и професионалисти от страната и чужбина, обединени от страстта към играта и състезателния дух.',
+            ],
+            [
+                'key' => 'field_about_text_2',
+                'label' => 'About Text (second paragraph)',
+                'name' => 'about_text_2',
+                'type' => 'textarea',
+                'default_value' => 'Всяко събитие се организира с внимание към детайла и следва утвърдени стандарти на спортменство и престиж, които допринасят за високото ниво и атмосферата на турнира.',
+            ],
+        ],
+        'location' => [
+            [['param' => 'page_type', 'operator' => '==', 'value' => 'front_page']],
+        ],
+    ]);
     acf_add_local_field_group([
         'key' => 'group_tournament',
         'title' => 'Tournament Details',
