@@ -17,7 +17,12 @@ $hours = get_field('footer_hours', $front_page_id) ?: '00:00 - 23:00';
                 <?php if (has_custom_logo()): ?>
                     <?php the_custom_logo(); ?>
                 <?php else: ?>
-                    <a href="<?php echo home_url(); ?>">Golf Club</a>
+                    <a href="<?php echo home_url(); ?>">
+                        <img
+                        class="custom-logo"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"
+                        alt="header-logo">
+                    </a>
                 <?php endif; ?>
             </div>
             <hr class="footer-top-line footer-top-line--right">
