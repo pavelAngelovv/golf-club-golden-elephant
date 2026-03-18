@@ -18,7 +18,7 @@
     --color-text: #333;
 }
 
-.wp-theme-golf-club-golden-elephant-theme {
+html {
     background-color: #f7f7f7;
 }
 
@@ -327,10 +327,6 @@
     line-height: 1.1;
     margin-bottom: 1rem;
     font-weight: 700;
-}
-
-.site-footer {
-    background: #f7f7f7;
 }
 
 .footer-top .container {

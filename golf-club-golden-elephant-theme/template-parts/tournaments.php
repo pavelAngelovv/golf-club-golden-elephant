@@ -35,7 +35,7 @@
                         'title' => get_the_title(),
                         'date' => $start_date,
                         'end_date' => $end_date,
-                        'image' => $image,
+                        'image' => $image ?: get_template_directory_uri() . '/assets/images/tournament-placeholder.png',
                     ];
                 endif;
             endwhile;
